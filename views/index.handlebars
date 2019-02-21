@@ -1,0 +1,85 @@
+<!-- the template that Handlebars renders onto. -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<div class="hero">
+  <div class="container has-text-centered">
+    <h1 class="title">
+      Sequelized Burger
+    </h1>
+  </div>
+</div>
+
+
+<div class="container content has-text-centered">
+
+  <div class="columns">
+    <div class="column">
+      <h2 class="eatMenu">Burgers to eat!</h2>
+
+      <ul>
+        {{#each burger}}
+          {{#unless this.devoured}}
+            <div>
+              <a href="#" class="burgers2eat" data-id="{{this.id}}">{{this.burger_name}}</a>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="column" id="form-div">
+      <form action="/burgers/create" method="POST">
+        <div id="submission" class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" id="burger-input" name="burger_name" placeholder="Tasty Burger">
+          </div>
+          <div class="control">
+            <input type="submit" id="create-burger" class="button" value="Add Burger">
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="column">
+      <h2 class="eatMenu">Burgers eaten!</h2>
+
+      <ul>
+        {{#each burger}}
+          {{#if this.devoured}}
+            <div class='burgerEaten'>
+              <div>
+                {{this.burger_name}}
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <footer class="has-text-centered">
+  Built and Designed by Heather Mathies
+</footer> -->
+</div>
+<script>
+  window.onscroll = function() {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>

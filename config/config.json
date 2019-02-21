@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "root",
+    "password": "keys.sql.password",
+    "database": "burgers_db2",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "",
+    "database": "burgers_db2TEST",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}
