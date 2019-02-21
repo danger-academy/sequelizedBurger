@@ -1,5 +1,5 @@
   -- drop database if exists burgers_db2;
-     CREATE DATABASE burgers_db2;
+     CREATE DATABASE rhrasmcc2p5rp37r;
      USE burgers_db2;
 
      CREATE TABLE burgers(
